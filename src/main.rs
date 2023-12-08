@@ -79,8 +79,8 @@ pub async fn start_tracking_banking_stage_errors(
                 Default::default(),
                 Some(yellowstone_grpc_proto::prelude::CommitmentLevel::Processed),
                 Default::default(),
-                Default::default(),
                 true,
+                None,
             )
             .await
             .unwrap();
