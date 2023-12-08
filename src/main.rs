@@ -62,7 +62,7 @@ pub async fn start_tracking_banking_stage_errors(
             let mut slot_sub = HashMap::new();
             slot_sub.insert(
                 "slot_sub".to_string(),
-                yellowstone_grpc_proto::geyser::SubscribeRequestFilterSlots {},
+                yellowstone_grpc_proto::geyser::SubscribeRequestFilterSlots { filter_by_commitment: None, },
             );
             slot_sub
         } else {
@@ -78,6 +78,7 @@ pub async fn start_tracking_banking_stage_errors(
                 Default::default(),
                 Default::default(),
                 Some(yellowstone_grpc_proto::prelude::CommitmentLevel::Processed),
+                Default::default(),
                 Default::default(),
                 true,
             )
